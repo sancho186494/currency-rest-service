@@ -29,8 +29,8 @@ java -jar currency-rest-service-1.0-SNAPSHOT.jar --spring.config.location=file:/
 git clone https://github.com/sancho186494/currency-rest-service.git
 cd ~/currency-rest-service
 ./gradlew build
-docker build --build-arg JAR_FILE=build/libs/\*.jar -t spring-boot-docker:latest .
-docker run --name spring-boot-docker -d -p 8081:8081 spring-boot-docker:latest
+docker build --build-arg JAR_FILE=build/libs/\*.jar -t currency-rest-service:latest .
+docker run --name currency-rest-service -d -p 8081:8081 currency-rest-service:latest
 ```
 
 **Сервис будет доступен по адресу http://localhost:8081**
