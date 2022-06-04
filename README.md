@@ -11,8 +11,8 @@
 
 **Необходимое ПО: JDK11, Docker, git**
 
-**Инструкция по сборке и запуску через Java:**
-git clone https://github.com/sancho186494/currency-rest-service.git
+**Инструкция по сборке и запуску через Java:**/n
+git clone https://github.com/sancho186494/currency-rest-service.git/n
 cd ~/currency-rest-service
 ./gradlew build
 cd build/libs/
