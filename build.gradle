@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group 'org.example.alfa'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', "2021.0.3")
+    testNGVersion = '7.5'
+    springBoot = '2.6.7'
+    springCloud = '3.1.2'
+}
+
+dependencies {
+    implementation group: 'org.testng', name: 'testng', version: "${testNGVersion}"
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${springBoot}"
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: "${springCloud}"
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "${springBoot}"
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+test {
+    useTestNG {
+        suites 'src/test/resources/testng.xml'
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+    options.compilerArgs.add('-parameters')
+}
+
+tasks.withType(Test) {
+    systemProperty("file.encoding", "UTF-8")
+}
