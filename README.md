@@ -1,5 +1,6 @@
 # currency-rest-service
-Артюшкин Александр. Задание для собеседования
+
+Чайкин Денис. Задание для собеседования
 
 **Стек:**
 
@@ -12,6 +13,7 @@
 **Необходимое ПО: JDK11, Docker, git**
 
 **Инструкция по сборке и запуску через Java:**
+
 ```
 git clone https://github.com/sancho186494/currency-rest-service.git
 cd ~/currency-rest-service
@@ -19,12 +21,16 @@ cd ~/currency-rest-service
 cd build/libs/
 java -jar currency-rest-service-1.0-SNAPSHOT.jar
 ```
-***При необходимости использования внешнего файла конфигурации, скопировать файл src/test/resources/application.properties, изменить параметры и по аналогии указать путь до файла:***
+
+***При необходимости использования внешнего файла конфигурации, скопировать файл
+src/test/resources/application.properties, изменить параметры и по аналогии указать путь до файла:***
+
 ```
 java -jar currency-rest-service-1.0-SNAPSHOT.jar --spring.config.location=file:/Users/alexanderart/Desktop/application.properties
 ```
 
 **Инструкция по сборке и запуску через Docker:**
+
 ```
 git clone https://github.com/sancho186494/currency-rest-service.git
 cd ~/currency-rest-service
